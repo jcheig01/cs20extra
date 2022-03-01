@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Extra Credit 1</title>
+        <link rel="stylesheet" href="first.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: burlywood;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Extra Credit 1</h1>
+            <hr>
+        </header>
+        <article>
+            <section>
+                <div class="content">
+                    <div class="box" id="left">abc</div>
+                    <div class="box" id="jump" onclick="jump()">JUMP ></div>
+                    <div class="box" id="right"></div>
+               </div>
+            </section>
+        </article>
+    </body>
+    <script language="javascript">
+        function jump() {
+            
+            var curr = document.getElementById("jump").innerHTML;
+            console.log(curr)
+
+            if (curr == "JUMP &gt;") {
+                document.getElementById("jump").innerHTML = "< JUMP";
+                document.getElementById("left").innerHTML = "";
+                document.getElementById("right").innerHTML = "abc";
+            } else {
+                document.getElementById("jump").innerHTML = "JUMP >";
+                document.getElementById("left").innerHTML = "abc";
+                document.getElementById("right").innerHTML = "";
+            }
+        }
+    </script>
+</html>

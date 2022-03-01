@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Extra Credit 2</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: burlywood;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Extra Credit 2</h1>
+            <hr>
+        </header>
+        <article>
+            <section>
+                <div class="content">
+                    <input type="checkbox" id="call" name="all" value="1234" onchange="toggle(this)">
+                    <p id="calltext" style="display: inline;">Check All</p><br><br>
+                    <input type="checkbox" id="c1" name="elt" value="1">first<br>
+                    <input type="checkbox" id="c2" name="elt" value="2">second<br>
+                    <input type="checkbox" id="c3" name="elt" value="3">third<br>
+                    <input type="checkbox" id="c4" name="elt" value="4">fourth<br>
+               </div>
+            </section>
+        </article>
+    </body>
+    <script language="javascript">
+        function toggle(source) {
+
+            if (source.checked) {
+                var checkboxes = document.getElementsByName('elt');
+                for(var i=0; i < checkboxes.length; i++)
+                    checkboxes[i].checked = true;
+
+                document.getElementById("calltext").innerHTML = "Uncheck All";
+            } else {
+                var checkboxes = document.getElementsByName('elt');
+                for(var i=0; i < checkboxes.length; i++)
+                    checkboxes[i].checked = false;
+
+                document.getElementById("calltext").innerHTML = "Check All";
+            }
+        }
+    </script>
+</html>

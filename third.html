@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Extra Credit 3</title>
+        <link rel="stylesheet" href="third.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: burlywood;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Extra Credit 3</h1>
+            <hr>
+        </header>
+        <article>
+            <section>
+                <div class="content">
+                    <img scr="">
+               </div>
+               <div class="buttons">
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+               </div>
+            </section>
+        </article>
+    </body>
+    <script language="javascript">
+        $(document).ready(function() {
+            var count = 0;
+            var images = ["img1.jpg", "img2.jpg", "img3.JPG", "img4.JPG", "img5.JPG"];
+            var image = $("img");
+            var timer = 0;
+
+            function nextSlide() {
+                image.fadeOut(1000, function() {
+                    image.attr("src", images[count]);
+                    image.fadeIn(1000);
+                });
+                count = (count + 1) % images.length;
+            }
+
+            function startSlideShow() {
+                if (!timer) { 
+                    timer = setInterval(nextSlide, 2500);
+                }
+            }
+
+            function stopSlideShow() {
+                clearInterval(timer); 
+                timer = 0;
+            }
+
+            $("#stop").click(stopSlideShow);
+
+            $("#start").click(startSlideShow);
+        });
+
+    </script>
+</html>
